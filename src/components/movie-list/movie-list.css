@@ -1,0 +1,24 @@
+.movie-list {
+  display: flex;
+  overflow-x: auto;
+  list-style-type: none;
+  /* flex-wrap: wrap; */
+}
+
+.popup-enter {
+    animation: pop-up .4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+
+@keyframes pop-up {
+    from{
+        opacity: .4;
+        filter: grayscale(1);
+        transform: translate(2rem, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate(o, 0);
+    }
+}
+

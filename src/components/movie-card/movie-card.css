@@ -1,0 +1,19 @@
+.movie-card {
+
+}
+
+.movie-card__image {
+    width: 15rem;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.movie-card__genre {
+    display: flex;
+    margin-right: .5rem;
+    list-style-type: none;
+}
+
+.movie-card__genre-item {
+    margin-right: .5rem;
+}
