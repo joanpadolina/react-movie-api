@@ -1,0 +1,15 @@
+.navbar__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 10rem;
+  margin: auto;
+  color: var(--c-white);
+  font-size: 2rem;
+  align-items: center;
+}
+
+.navbar__subtitle {
+  font-size: 0.6rem;
+  font-family: var(--font-heading);
+}

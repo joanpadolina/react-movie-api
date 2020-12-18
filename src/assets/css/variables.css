@@ -1,0 +1,16 @@
+:root {
+    --s-default: 1rem;
+
+    --c-base-black: #000000;
+    --c-black: #444444;
+    --c-white: #ffffff;
+    --c-dark: #2C3141;
+    --c-gray: #5c647e;
+    --c-primary: #fd5141;
+
+    --font-body: 'Gilda Display';
+    --font-heading: 'Suranna', serif;
+    --font-secondary: 'Roboto';
+
+    --size-big: 3rem;
+}

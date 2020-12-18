@@ -1,0 +1,13 @@
+.title-big {
+    font-family: var(--font-heading);
+    /* text-transform: uppercase; */
+    letter-spacing: 0.3rem;
+    word-break: break-all;
+    font-size: 2rem;
+    /* font-weight: 100; */
+}
+
+.body {
+    line-height: 1.2rem;
+    font-family: var(--font-body);
+}
