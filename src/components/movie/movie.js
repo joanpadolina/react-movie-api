@@ -16,6 +16,7 @@ export default function Movie() {
       `https://api.themoviedb.org/3/movie/${movieParams}?api_key=${process.env.REACT_APP_ACCESS_TOKEN}&language=en-US`
     );
     const response = await data.json();
+    console.log(response)
     return setCurrentData(response);
   }
 

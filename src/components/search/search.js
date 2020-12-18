@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { SearchMovies } from "../../utils/movie-api";
-import MovieList from "../movie-list/movie-list.js";
+import { useHistory, useRouteMatch } from "react-router-dom";
 
-export default function Search() {
+export default function Search({ searchQuery = () => {} }) {
   const [query, setQuery] = useState("");
-  const [liveQuery, setLiveQuery] = useState('')
-  const [movieData, setMovieData] = useState([] || "");
+  const history = useHistory();
+  const match = useRouteMatch();
+  const newQuery = match.params.query;
 
   useEffect(() => {
-    async function searchQuery() {
-      const data = await SearchMovies(liveQuery);
-      return setMovieData(data.results);
-    }
-    searchQuery();
-  }, [liveQuery]);
+    searchQuery(query ? query : '' || newQuery ? newQuery : " ");
+  }, [query]);
 
   function submitQuery(e) {
     e.preventDefault();
-    setQuery(e.target[0].value);
+    setQuery(e.target[0].value || newQuery);
+    history.push(`/search/${query}`);
+  }
+
+  function submitOnChange(e) {
+    e.preventDefault();
+    setQuery(e.target.value);
   }
 
   return (
     <div>
       <form onSubmit={(e) => submitQuery(e)}>
-        <input type="text" onChange={e => setLiveQuery(e.target.value)} />
+        <input type="text" onChange={(e) => submitOnChange(e)} />
         <input type="submit" value="Submit" />
       </form>
       <h2> {query} </h2>
-      {movieData && <MovieList props={movieData} />}
-    
     </div>
   );
 }

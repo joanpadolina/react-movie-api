@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import MovieCard from "../movie-card/movie-card.js";
 import "./movie-list.css";
 
-export default function MovieList({ props }) {
-
+export default function MovieList({ props = []}) {
   return (
     <ul className="movie-list">
       {props.map((item) => {

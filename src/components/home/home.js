@@ -2,18 +2,13 @@ import React, { useState, useEffect } from "react";
 import MovieList from "../movie-list/movie-list.js";
 import { ApiCall } from "../../utils/movie-api";
 
-export default function Home({ movies }) {
+export default function Home({ movies, getData = () => {} }) {
   const [query, setQuery] = useState("popular");
   const [data, setData] = useState(movies);
 
   useEffect(() => {
-    apiData(query);
+    getData(query)
   }, [query]);
-
-  async function apiData(query) {
-    const apiData = await ApiCall(query);
-    setData(apiData);
-  }
 
   function changeQuery(e) {
     setQuery(e.target.value);
@@ -29,9 +24,6 @@ export default function Home({ movies }) {
             <option>top_rated</option>
             <option>upcoming</option>
           </select>
-        </section>
-        <section>
-          <MovieList props={data} />
         </section>
       </main>
     </div>
