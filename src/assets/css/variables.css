@@ -2,15 +2,21 @@
     --s-default: 1rem;
 
     --c-base-black: #000000;
-    --c-black: #444444;
+    --c-dark: #20242a;
+    --c-dark-tint: #2B3038;
+    --c-pale: #f1d9be;
+    --c-orange: #FF662B;
     --c-white: #ffffff;
-    --c-dark: #2C3141;
     --c-gray: #5c647e;
-    --c-primary: #fd5141;
 
+    --gradient-dark: linear-gradient(rgba(32, 36, 42, 0), rgb(21 24 29 / 70%) 40%, rgba(0, 0, 0, 1));
+    
     --font-body: 'Gilda Display';
     --font-heading: 'Suranna', serif;
-    --font-secondary: 'Roboto';
+    --font-main: 'Arial';
 
-    --size-big: 3rem;
+    --font-small: .8rem;
+    --font-default: 1rem;
+    --font-medium: 1.5rem;
+    --font-big: 3rem;
 }

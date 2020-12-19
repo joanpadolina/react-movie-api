@@ -1,0 +1,48 @@
+.search__form {
+    display: flex;
+    width: 15rem;
+    position: relative;
+    margin: auto;
+    transition: box-shadow .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.search--active {
+    box-shadow: 0 1px 0 0 var(--c-pale);
+    border-radius: .2rem;
+}
+
+.search__input {
+    height: 2rem;
+    width: 80%;
+    flex: 1;
+    padding: .4rem;
+    border: none;
+    outline: none;
+    border-radius: .2rem 0 0 .2rem;
+    background: var(--c-dark-tint);
+    text-align: center;
+}
+
+.search__input[type="text"] {
+    color: var(--c-white);
+}
+
+.search__submit {
+    padding: .5rem;
+    border-radius: 0 .2rem .2rem 0;
+    border: none;
+    background-color: var(--c-dark);
+    color: var(--c-pale);
+}
+
+.search__subject {
+    display: block;
+    text-align: center;
+    color: var(--c-pale);
+    font-size: var(--font-small);
+}
+
+.search__value {
+    color: var(--c-orange);
+    text-transform: capitalize;
+}

@@ -1,5 +1,4 @@
 .movie {
-  height: 100vh;
   width: 100vw;
   overflow: hidden;
   color: var(--c-white);
@@ -28,6 +27,12 @@ img.movie__backdrop-image {
   margin: auto;
   box-shadow: 0 0 28px 0 var(--c-base-black);
 }
+
+.movie__body-wrapper {
+  bottom: 4rem;
+}
+
+
 .movie__body-wrapper, .movie__footer {
     padding: var(--s-default);
 }

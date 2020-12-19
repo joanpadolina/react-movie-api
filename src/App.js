@@ -52,10 +52,10 @@ export default function App() {
       </Switch>
       <Route path="/search" exact>
         <Search searchQuery={updateSearch} />
-        <MovieList props={searchData} />
+        <MovieList props={searchData ? searchData : data} />
       </Route>
       <Route path={`/search/:query`}>
-        <Search searchQuery={updateSearch} />
+        <Search searchQuery={updateSearch} totalResults={data.length} />
         <MovieList props={searchData ? searchData : data} />
       </Route>
     </Router>

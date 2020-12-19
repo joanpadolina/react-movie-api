@@ -8,7 +8,7 @@
 
 body {
     background-color: var(--c-base-black);
-    font-family: var(--font-heading);
+    color: var(--c-pale);
 }
 
 a {

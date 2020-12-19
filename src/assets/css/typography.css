@@ -1,13 +1,22 @@
 .title-big {
     font-family: var(--font-heading);
-    /* text-transform: uppercase; */
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
     word-break: break-all;
     font-size: 2rem;
-    /* font-weight: 100; */
+    color: var(--c-pale);
+    line-height: calc(var(--font-default) * 2);
+    margin: calc(var(--s-default) / 2) 0;
+}
+
+.title {
+    line-height: var(--font-default);
 }
 
 .body {
     line-height: 1.2rem;
-    font-family: var(--font-body);
+}
+
+.h1 {
+    color: var(--c-pale);
+    font-size: var(--font-medium);
 }

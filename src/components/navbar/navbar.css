@@ -7,9 +7,12 @@
   color: var(--c-white);
   font-size: 2rem;
   align-items: center;
+  margin-bottom: var(--s-default);
 }
 
 .navbar__subtitle {
   font-size: 0.6rem;
   font-family: var(--font-heading);
+  margin-top: -1rem;
+  
 }

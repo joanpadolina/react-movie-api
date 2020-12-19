@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
-import MovieList from "../movie-list/movie-list.js";
-import { ApiCall } from "../../utils/movie-api";
+import React, { useState, useEffect } from 'react';
 
-export default function Home({ movies, getData = () => {} }) {
-  const [query, setQuery] = useState("popular");
-  const [data, setData] = useState(movies);
+export default function Home({ getData = () => {} }) {
+  const [query, setQuery] = useState('popular');
 
   useEffect(() => {
-    getData(query)
+    getData(query);
   }, [query]);
 
   function changeQuery(e) {

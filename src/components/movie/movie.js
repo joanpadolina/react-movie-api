@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useRouteMatch } from "react-router-dom";
-import './movie.css'
+import React, { useEffect, useState } from 'react';
+import { useRouteMatch } from 'react-router-dom';
+import './movie.css';
 export default function Movie() {
   const [currentData, setCurrentData] = useState({});
   const match = useRouteMatch();
   const movieParams = match.params.movieId;
-  const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+  const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+  const imgNotFound = 'https://i.ytimg.com/vi/L1tx-wAI6Nw/maxresdefault.jpg';
 
   useEffect(() => {
     getMovie();
@@ -13,7 +14,7 @@ export default function Movie() {
 
   async function getMovie() {
     const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieParams}?api_key=${process.env.REACT_APP_ACCESS_TOKEN}&language=en-US`
+      `https://api.themoviedb.org/3/movie/${movieParams}?api_key=${process.env.REACT_APP_ACCESS_TOKEN}&language=en-US`,
     );
     const response = await data.json();
     console.log(response);
@@ -25,13 +26,17 @@ export default function Movie() {
       <div className="movie__header">
         <img
           className="movie__image"
-          src={IMAGE_BASE_URL + currentData.poster_path}
+          src={
+            currentData.poster_path
+              ? IMAGE_BASE_URL + currentData.poster_path
+              : imgNotFound
+          }
           alt=""
           loading="lazy"
         ></img>
         {currentData.backdrop_path && (
           <img
-          className="movie__backdrop-image"
+            className="movie__backdrop-image"
             src={IMAGE_BASE_URL + currentData.backdrop_path}
             alt=""
             loading="lazy"
@@ -56,7 +61,7 @@ export default function Movie() {
         </span>
 
         <span className="movie__vote-sum">
-          {" "}
+          {' '}
           avarage score: {currentData.vote_average}
         </span>
       </div>
