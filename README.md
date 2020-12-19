@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ce7a54e3-bbd9-408b-a1bf-a0e7489ec4f8/deploy-status)](https://app.netlify.com/sites/react-movie-api-2020/deploys)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
