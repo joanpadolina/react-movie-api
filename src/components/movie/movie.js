@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
-import './movie.css';
+import React, { useEffect, useState } from "react";
+import { useRouteMatch } from "react-router-dom";
+import "./movie.css";
 export default function Movie() {
   const [currentData, setCurrentData] = useState({});
   const match = useRouteMatch();
   const movieParams = match.params.movieId;
-  const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
-  const imgNotFound = 'https://i.ytimg.com/vi/L1tx-wAI6Nw/maxresdefault.jpg';
+  const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+  const imageFrontPoster = IMAGE_BASE_URL + currentData.poster_path;
+  const imageBackPoster = IMAGE_BASE_URL + currentData.backdrop_path;
+  const errorImage = "https://i.ytimg.com/vi/L1tx-wAI6Nw/maxresdefault.jpg";
 
   useEffect(() => {
     getMovie();
-  }, []);
+  });
 
   async function getMovie() {
     const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieParams}?api_key=${process.env.REACT_APP_ACCESS_TOKEN}&language=en-US`,
+      `https://api.themoviedb.org/3/movie/${movieParams}?api_key=${process.env.REACT_APP_ACCESS_TOKEN}&language=en-US`
     );
     const response = await data.json();
-    console.log(response);
     return setCurrentData(response);
   }
 
@@ -26,18 +27,14 @@ export default function Movie() {
       <div className="movie__header">
         <img
           className="movie__image"
-          src={
-            currentData.poster_path
-              ? IMAGE_BASE_URL + currentData.poster_path
-              : imgNotFound
-          }
+          src={currentData.poster_path ? imageFrontPoster : errorImage}
           alt=""
           loading="lazy"
         ></img>
         {currentData.backdrop_path && (
           <img
             className="movie__backdrop-image"
-            src={IMAGE_BASE_URL + currentData.backdrop_path}
+            src={currentData.backdrop_path ? imageBackPoster : errorImage}
             alt=""
             loading="lazy"
           ></img>
@@ -52,7 +49,7 @@ export default function Movie() {
         <ul className="movie__genre">
           {currentData &&
             currentData.genres?.map((item) => {
-              return <li key={item.id}>{item.name}</li>;
+              return <li className="movie__genre-item" key={item.id}>{item.name}</li>;
             })}
         </ul>
 
@@ -61,7 +58,7 @@ export default function Movie() {
         </span>
 
         <span className="movie__vote-sum">
-          {' '}
+          {" "}
           avarage score: {currentData.vote_average}
         </span>
       </div>

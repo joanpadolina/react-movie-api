@@ -1,6 +1,10 @@
 :root {
     --s-default: 1rem;
 
+    --m-small: 320px;
+    --m-medium: 768px;
+    --m-large: 1280px;
+
     --c-base-black: #000000;
     --c-dark: #20242a;
     --c-dark-tint: #2B3038;
